@@ -13,8 +13,37 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 #get the libraries
-install.packages("tidyverse")
+# install.packages("tidyverse")
 library(tidyverse)
-theme_set(theme_light())
+theme_set(theme_light(base_size = 20))
+
+#import the data
+library(readxl)
+unemployment <- read_excel("unemployment")
+interest_rate <- read.csv("/cloud/project/interest_rate.csv")
+facebook <- read_excel("facebook")
+#change valuation to log2 so fits on the plot
+facebook <- facebook %>%
+  mutate(valuation = log2(valuation))
+
+#sort the dates out
+unemployment <- unemployment %>%
+  mutate(date = parse_date_time(date, orders = "my"))
+
+interest_rate <- interest_rate %>%
+  mutate(date = parse_date_time(date, orders = "my"))
+
+# merge and gather 
+rates_data <- merge(interest_rate, unemployment, all = TRUE)
+rates_data <- merge(rates_data, facebook, all = TRUE)
+
+rates_data<- rates_data %>%
+  gather(type, rate, interest_rate:valuation , factor_key=TRUE)
+
+# plot
+ggplot(rates_data, aes(date,rate))+geom_point(aes(colour=type))+geom_smooth(aes(colour=type), span=0.3, se=FALSE)+ylim(c(0,15)) +
+  theme(legend.position = "none") +
+  labs(x="Date",y="")
+
 ```
 
