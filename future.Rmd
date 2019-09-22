@@ -53,4 +53,22 @@ timeline <- read.csv("/cloud/project/timeline.csv")
 ggplot(timeline, aes(x=year, y=count)) + geom_col() +
   labs(x="Year", y="PubMed Citations")
 ```
+For the plots used in the explanation of machine learning
+```{r}
+library(MASS)
+# install.packages("GGally")
+library(GGally)
+
+# For initial plot 
+l <- ggplot(Boston, aes(lstat, medv))+geom_point(color="dodgerblue3") +
+  labs(x="Predictor", y="Output")
+# With smooth line  
+l + geom_smooth()
+# To show as a classification problem 
+ggplot(Boston, aes(lstat, medv))+geom_point(aes(col=as.factor(chas))) +
+  scale_color_manual(values = c("dodgerblue3", "orangered3")) +
+  labs(x="Predictor", y="Output") +
+  theme(legend.position = "none")
+  
+```
 
