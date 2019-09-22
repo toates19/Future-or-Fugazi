@@ -10,7 +10,7 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+For the "economic" plot 
 ```{r}
 #get the libraries
 # install.packages("tidyverse")
@@ -45,5 +45,12 @@ ggplot(rates_data, aes(date,rate))+geom_point(aes(colour=type))+geom_smooth(aes(
   theme(legend.position = "none") +
   labs(x="Date",y="")
 
+```
+For the histogram of Pubmed citations containing "Machine Learning"
+```{r}
+#Import data (dwnloaded from pubmed after searching 'machine learning')
+timeline <- read.csv("/cloud/project/timeline.csv")
+ggplot(timeline, aes(x=year, y=count)) + geom_col() +
+  labs(x="Year", y="PubMed Citations")
 ```
 
