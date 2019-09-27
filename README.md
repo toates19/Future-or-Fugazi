@@ -1,5 +1,7 @@
 # Future-or-Fugazi
-This talk (**TechOates.pdf**) examines how we have arrived where we are, and what we might reasonably be able to expect from technology in healthcare, with a focus on promsies made about machine learning for non-imaging data.
+This talk (**TechOates.pdf**) examines what we might reasonably be able to expect from technology in healthcare and how we have arrived in the present climate. 
+
+The first part looks at how tech companies have identified and created a market in healthcare. The second part focusses on expectations for the use of machine learning with non-imaging data.
 
 It owes a lot to other people's ideas. These sources and some of the referecnes are listed below:
 - Slide 3:	the Topol Review is [here](https://topol.hee.nhs.uk/)
