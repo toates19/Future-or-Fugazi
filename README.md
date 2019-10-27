@@ -1,5 +1,5 @@
 # Future-or-Fugazi
-This talk (**TechOates.pdf**) examines what we might reasonably be able to expect from technology in healthcare and how we have arrived in the present. 
+This talk (click on **TechOates.pdf** above for the slides) examines what we might reasonably be able to expect from technology in healthcare and how we have arrived in the present. 
 
 The first part looks at how tech companies have identified and created a market in healthcare. The second part focusses on expectations for the use of machine learning with non-imaging data.
 
